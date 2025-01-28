@@ -22,8 +22,11 @@
                         </div>
                         <a class="btn btn-primary" href="{{ route('posts.edit', ['post' => $post->id]) }}">Postni
                             o'zgartirish</a>
-                        <a class="btn btn-dark" href="{{ route('posts.destroy', ['post' => $post->id]) }}">Postni
-                            o'chirish</a>
+                            <form action="{{route('posts.destroy', ['post'=> $post->id])}}" method="post">
+                                @method('delete')
+                                @csrf
+                                <button type="submit" class="btn btn-dark">O'chirish</button>
+                            </form>
                         <h1 class="section-title mb-3">{{ $post->title }}</h1>
                     </div>
 
