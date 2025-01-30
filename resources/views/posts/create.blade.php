@@ -18,6 +18,19 @@
                 @enderror
             </div>
             <div class="form-group">
+                <h3>Kategoriyasini tanlang</h3>
+                <select name="category" id="" lass="form-control">
+                    <option value="1">Web Development</option>
+                    <option value="2">Web Design</option>
+                    <option value="3">Online Marketing</option>
+                    <option value="4">Keyword Research</option>
+                    <option value="4">Email Marketing</option>
+                </select>
+                @error('title')
+                    <div class="alert alert-danger">{{ $message }}</div>
+                @enderror
+            </div>
+            <div class="form-group">
                 <input type="text" class="form-control " name="short_content" placeholder="post short content" value="{{ old('short_content')}}">
                 @error('short_content')
                     <div class="alert alert-danger">{{ $message }}</div>
