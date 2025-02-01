@@ -12,38 +12,45 @@
             @csrf
             <h3>Post yarating</h3>
             <div class="form-group">
-                <input type="text" class="form-control" name="title" placeholder="post title" value="{{old('title')}}">
+                <input type="text" class="form-control" name="title" placeholder="title"
+                    value="{{ old('title') }}">
                 @error('title')
                     <div class="alert alert-danger">{{ $message }}</div>
                 @enderror
             </div>
             <div class="form-group">
                 <h3>Kategoriyasini tanlang</h3>
-                <select name="category" id="" lass="form-control">
-                    <option value="1">Web Development</option>
-                    <option value="2">Web Design</option>
-                    <option value="3">Online Marketing</option>
-                    <option value="4">Keyword Research</option>
-                    <option value="4">Email Marketing</option>
+                <select name="category_id" id="" class="form-control">
+                    @foreach ($categories as $category)
+                        <option value="{{$category->id}}" >{{$category->name}}</option>
+                    @endforeach
+                </select>
+                <select name="tags[]" id="" class="form-control my-3" size="4" multiple>
+                    @foreach ($tags as $tag)
+                        <option value="{{$tag->id}}" >{{$tag->name}}</option>
+                    @endforeach
                 </select>
                 @error('title')
                     <div class="alert alert-danger">{{ $message }}</div>
                 @enderror
             </div>
             <div class="form-group">
-                <input type="text" class="form-control " name="short_content" placeholder="post short content" value="{{ old('short_content')}}">
+                <input type="text" class="form-control " name="short_content" placeholder="short content"
+                    value="{{ old('short_content') }}">
                 @error('short_content')
                     <div class="alert alert-danger">{{ $message }}</div>
                 @enderror
             </div>
             <div class="form-group">
-                <input type="text" class="form-control " name="body" placeholder="post body" value="{{old('body')}}">
+                <input type="text" class="form-control " name="body" placeholder="body"
+                    value="{{ old('body') }}">
                 @error('body')
                     <div class="alert alert-danger">{{ $message }}</div>
                 @enderror
             </div>
             <div class="form-group">
-                <input type="file" class="form-control " name="photo" placeholder="post image" value="{{old('photo')}}">
+                <input type="file" class="form-control " name="photo" placeholder="image"
+                    value="{{ old('photo') }}">
                 @error('photo')
                     <div class="alert alert-danger">{{ $message }}</div>
                 @enderror

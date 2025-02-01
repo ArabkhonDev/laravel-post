@@ -13,6 +13,10 @@
             <a href="{{route('posts.index')}}" class="nav-item nav-link">Oxirgi bajargan ishlarimiz</a>
             <a href="{{route('contact')}}" class="nav-item nav-link">Aloqa</a>
         </div>
-        <a href="{{route('posts.create')}}" class="btn btn-primary mr-3 d-none d-lg-block">Post yaratish</a>
+        @auth
+        <a href="{{'posts.create'}}" class="btn btn-primary mr-3 d-none d-lg-block">Post yaratish</a>
+        @else
+        <a href="{{'/login'}}" class="btn btn-primary mr-3 d-none d-lg-block">Kirish</a>
+        @endauth
     </div>
 </nav>

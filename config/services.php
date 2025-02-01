@@ -17,6 +17,10 @@ return [
     'postmark' => [
         'token' => env('POSTMARK_TOKEN'),
     ],
+    'telegram' => [
+        'bot_token' => env('7454323842:AAErI22LBMX35hU78_6PuhjI7oh-JEZvd4Y'),
+    ],
+
 
     'ses' => [
         'key' => env('AWS_ACCESS_KEY_ID'),

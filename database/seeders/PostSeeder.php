@@ -16,7 +16,8 @@ class PostSeeder extends Seeder
             for ($y = 1; $y <= 6; $y++) {
                 Post::create([
                     'title' => Str::random(10),
-                    'user_id' => 1,
+                    'user_id' => random_int(1,3),
+                    'category_id'=> random_int(1,5),
                     'short_content' => Str::random(20),
                     'body' => Str::random(300),
                     'photo' => null,

@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use App\Models\Category;
+use App\Models\Tag;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
@@ -13,10 +14,14 @@ class CategorySeeder extends Seeder
      */
     public function run(): void
     {
-        Category::create(['name' => 'Web Development']);
-        Category::create(['name' => 'Web Design']);
-        Category::create(['name' => 'Online Marketing']);
-        Category::create(['name' => 'Keyword Research']);
-        Category::create(['name' => 'Email Marketing']);
+        $categories = [
+            ['name' => 'Web Development'],
+            ['name' => 'Web Design'],
+            ['name' => 'Online Marketing'],
+            ['name' => 'Keyword Research'],
+            ['name' => 'Email Marketing']
+            ];
+
+            Category::insert($categories);
     }
 }

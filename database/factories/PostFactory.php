@@ -18,6 +18,7 @@ class PostFactory extends Factory
     {
         return [
             'user_id'=> random_int(1,26),
+            'category_id'=> random_int(1,5),
             'name' => fake()->sentence(),
             'short_content' => fake()->sentence(7),
             'body' => fake()->paragraph(10),
