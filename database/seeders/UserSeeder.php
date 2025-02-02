@@ -15,13 +15,13 @@ class UserSeeder extends Seeder
      */
     public function run(): void
     {
-        for ($x = 1; $x <= 3; $x++) {
+        // for ($x = 1; $x <= 1; $x++) {
             User::create([
-                'name' => Str::random(10),
-                'email' => Str::random(10) . '@example.com',
-                'password' => Hash::make('password'),
+                'name' => 'arabjon',
+                'email' => 'arabjon' . '@example.com',
+                'password' => Hash::make('secret'),
             ]);
-        }
+        // }
         // User::factory(10)->create();
         // $i = 1;
         // while ($i <= 10) {

@@ -4,7 +4,7 @@
     </x-slot>
 
 
-    <form method="POST" action="" class="container w-50 mt-4">
+    <form method="POST" action="{{route('authenticate')}}" class="container w-50 mt-4">
         @csrf
         <center>
             <h1>Kirish</h1>

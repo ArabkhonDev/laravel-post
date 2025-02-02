@@ -32,7 +32,7 @@ class Post extends Pivot
     }
 
     public function tags(){
-        return $this->belongsToMany(Tag::class);
+        return $this->belongsToMany(Tag::class,);
     }
 
 

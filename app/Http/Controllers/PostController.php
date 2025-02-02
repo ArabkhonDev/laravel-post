@@ -7,16 +7,27 @@ use App\Models\Category;
 use App\Models\Post;
 use App\Models\Tag;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
+use App\Http\Controllers\Controller;
+use Illuminate\Routing\Controllers\HasMiddleware;
+use Illuminate\Routing\Controllers\Middleware;
 
 // use Illuminate\Support\Facades\DB as FacadesDB;
 
-class PostController extends Controller
+class PostController extends Controller implements HasMiddleware
 {
+
+    public static function middleware(): array
+    {
+        return [
+            'auth',
+            new Middleware('log', only: ['index']),
+        ];
+    }
+
+    
     public function index()
     {
-        
         // $posts = DB::table('posts')->latest()->paginate(9); //
         $posts = Post::latest()->paginate(6);
 
@@ -31,7 +42,6 @@ class PostController extends Controller
         return view('posts.create')->with([
             'categories'=> Category::all(),
             'tags'=> Tag::all(),
-
         ]);
     }
 

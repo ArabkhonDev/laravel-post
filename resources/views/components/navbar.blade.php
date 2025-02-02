@@ -8,15 +8,20 @@
     <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
         <div class="navbar-nav mr-auto py-0">
             <a href="/" class="nav-item nav-link active">Bosh sahifa</a>
-            <a href="{{route('about')}}" class="nav-item nav-link">Biz xaqimizda</a>
-            <a href="{{route('service')}}" class="nav-item nav-link">Xizmatlarmiz</a>
-            <a href="{{route('posts.index')}}" class="nav-item nav-link">Oxirgi bajargan ishlarimiz</a>
-            <a href="{{route('contact')}}" class="nav-item nav-link">Aloqa</a>
+            <a href="{{ route('about') }}" class="nav-item nav-link">Biz xaqimizda</a>
+            <a href="{{ route('service') }}" class="nav-item nav-link">Xizmatlarmiz</a>
+            <a href="{{ route('posts.index') }}" class="nav-item nav-link">Oxirgi bajargan ishlarimiz</a>
+            <a href="{{ route('contact') }}" class="nav-item nav-link">Aloqa</a>
         </div>
-        @auth
-        <a href="{{'posts.create'}}" class="btn btn-primary mr-3 d-none d-lg-block">Post yaratish</a>
+        <a href="{{ route('posts.create') }}" class="btn btn-primary mr-3 d-none d-lg-block">Post yaratish</a>
+        {{-- @auth
+        <a href="{{ route('posts.create') }}" class="btn btn-primary mr-3 d-none d-lg-block">Post yaratish</a>
+        <form action="{{ route('logout') }}" method="post">
+                @csrf
+                <button class="btn btn-dark mr-3 d-none d-lg-block" type="submit">chiqish</button>
+            </form>
         @else
-        <a href="{{'/login'}}" class="btn btn-primary mr-3 d-none d-lg-block">Kirish</a>
-        @endauth
+            <a href="{{ '/login' }}" class="btn btn-primary mr-3 d-none d-lg-block">Kirish</a>
+        @endauth --}}
     </div>
 </nav>
