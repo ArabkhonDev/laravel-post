@@ -4,7 +4,7 @@
         Rogister
     </x-slot>
     
-    <form method="POST" action="{{route('authenticate')}}" class="container w-50 mt-4">
+    <form method="POST" action="{{route('register.store')}}" class="container w-50 mt-4">
         @csrf
         <center>
             <h1>Ro'yxatdan o'tish</h1>

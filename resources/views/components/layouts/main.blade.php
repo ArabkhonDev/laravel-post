@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>{{$title ?? "Klean - Cleaning Services"}} </title>
+    <title>{{$title ?? "Ozodalik - Tozalash xizmati"}} </title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="Free HTML Templates" name="keywords">
     <meta content="Free HTML Templates" name="description">
@@ -32,7 +32,7 @@
         <div class="row">
             <div class="col-lg-3 bg-secondary d-none d-lg-block">
                 <a href="" class="navbar-brand w-100 h-100 m-0 p-0 d-flex align-items-center justify-content-center">
-                    <h1 class="m-0 display-3 text-primary">Klean</h1>
+                    <h1 class="m-0 display-3 text-primary">Ozodalik</h1>
                 </a>
             </div>
             <div class="col-lg-9">
@@ -83,7 +83,7 @@
         <div class="row pt-5">
             <div class="col-lg-3 col-md-6 mb-5">
                 <a href="index.html" class="navbar-brand">
-                    <h1 class="m-0 mt-n3 display-4 text-primary">Klean</h1>
+                    <h1 class="m-0 mt-n3 display-4 text-primary">Ozodalik</h1>
                 </a>
                 <p>Volup amet magna clita tempor. Tempor sea eos vero ipsum. Lorem lorem sit sed elitr sed kasd et</p>
                 <h5 class="font-weight-semi-bold text-white mb-2">Opening Hours:</h5>

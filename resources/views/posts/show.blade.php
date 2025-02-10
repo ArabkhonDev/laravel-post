@@ -21,16 +21,17 @@
                                 href="">{{ $post->created_at }}</a>
                         </div>
                         <h3 class="btn btn-success rounded">{{ $post->category->name }}</h3><br>
-                        <div class="d-flex">
-
-                            <a class="btn btn-primary" href="{{ route('posts.edit', ['post' => $post->id]) }}">Postni
-                                o'zgartirish</a>
-                            <form action="{{ route('posts.destroy', ['post' => $post->id]) }}" method="post"
-                                class="mx-2" onsubmit="return confirm('postni o\'chirishga ishonchingiz komilmi?')">
-                                @method('delete')
-                                @csrf<button type="submit" class="btn btn-dark">O'chirish</button>
-                            </form>
-                        </div>
+                        @auth
+                            <div class="d-flex">
+                                <a class="btn btn-primary" href="{{ route('posts.edit', ['post' => $post->id]) }}">Postni
+                                    o'zgartirish</a>
+                                <form action="{{ route('posts.destroy', ['post' => $post->id]) }}" method="post"
+                                    class="mx-2" onsubmit="return confirm('postni o\'chirishga ishonchingiz komilmi?')">
+                                    @method('delete')
+                                    @csrf<button type="submit" class="btn btn-dark">O'chirish</button>
+                                </form>
+                            </div>
+                        @endauth
                         <h1 class="section-title mb-3">{{ $post->title }}</h1>
                     </div>
 

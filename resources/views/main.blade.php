@@ -1,7 +1,7 @@
 <x-layouts.main>
 
     <x-slot:title>
-        Klean
+        Ozodalik
     </x-slot>
 
     <!-- Carousel Start -->

@@ -13,7 +13,6 @@ class TagSeeder extends Seeder
      */
     public function run(): void
     {
-
         $tags = [
             ['name' => 'Design'],
             ['name' => 'Development'],
@@ -23,6 +22,6 @@ class TagSeeder extends Seeder
             ['name' => 'Consulting']
         ];
 
-        Tag::insert($tags); 
+        Tag::insert($tags);    
     }
 }

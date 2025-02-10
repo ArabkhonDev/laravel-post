@@ -11,12 +11,13 @@ use Illuminate\Support\Facades\Storage;
 use App\Http\Controllers\Controller;
 use Illuminate\Routing\Controllers\HasMiddleware;
 use Illuminate\Routing\Controllers\Middleware;
+use Illuminate\Support\Facades\DB;
 
-// use Illuminate\Support\Facades\DB as FacadesDB;
 
 class PostController extends Controller implements HasMiddleware
 {
 
+    
     public static function middleware(): array
     {
         return [
@@ -24,12 +25,11 @@ class PostController extends Controller implements HasMiddleware
             new Middleware('log', only: ['index']),
         ];
     }
-
     
     public function index()
     {
-        // $posts = DB::table('posts')->latest()->paginate(9); //
-        $posts = Post::latest()->paginate(6);
+
+        $posts = DB::table('posts')->latest()->paginate(6); //
 
         return view('posts.index')->with([
             "posts" => $posts,
@@ -47,7 +47,6 @@ class PostController extends Controller implements HasMiddleware
 
     public function store(StorePostRequest $request)
     {
-        // dd($request);
         if ($request->hasFile('photo')) {
             $name = $request->file('photo')->getClientOriginalName();
             $path = $request->file('photo')->storeAs('post-photos', $name);
@@ -56,7 +55,6 @@ class PostController extends Controller implements HasMiddleware
         $post = Post::create([
             'title' => $request->title,
             'user_id'=> 1,
-            'tags'=> [],
             'category_id'=>$request->category_id,
             'short_content' => $request->short_content,
             'body' => $request->body,
@@ -64,10 +62,8 @@ class PostController extends Controller implements HasMiddleware
         ]);
 
         if(isset($request->tags)){
-            foreach ($request->tags as $tag ) {
-                $post->tags()->sync($tag);
-                dd($tag);
-                
+            foreach($request->tags as $tag){
+                $post->tags()->attach($tag);
             }
         }
 

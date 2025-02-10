@@ -23,15 +23,15 @@ class UserSeeder extends Seeder
             ]);
         // }
         // User::factory(10)->create();
-        // $i = 1;
-        // while ($i <= 10) {
-        //     User::create([
-        //         'name' => Str::random(10),
-        //         'email' => Str::random(10) . '@example.com',
-        //         'password' => Hash::make('password'),
-        //     ]);
-        //     $i++;
-        // }
+        $i = 1;
+        while ($i <= 10) {
+            User::create([
+                'name' => Str::random(10),
+                'email' => Str::random(10) . '@example.com',
+                'password' => Hash::make('password'),
+            ]);
+            $i++;
+        }
         // User::create([
         //     'name' => Str::random(10),
         //     'email' => Str::random(10) . '@example.com',

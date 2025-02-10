@@ -2,9 +2,10 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\Pivot;
 
-class Post extends Pivot
+class Post extends Model
 {
     protected $table = 'posts';
     protected $fillable = [
@@ -31,9 +32,9 @@ class Post extends Pivot
         return $this->hasMany(Comment::class, 'post_id');
     }
 
-    public function tags(){
-        return $this->belongsToMany(Tag::class,);
+
+    public function tags()
+    {
+        return $this->belongsToMany(Tag::class);
     }
-
-
 }
