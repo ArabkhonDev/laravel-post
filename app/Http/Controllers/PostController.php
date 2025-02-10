@@ -14,27 +14,27 @@ use Illuminate\Routing\Controllers\Middleware;
 use Illuminate\Support\Facades\DB;
 
 
-class PostController extends Controller implements HasMiddleware
+// class PostController extends Controller implements HasMiddleware
+class PostController extends Controller
 {
 
     
-    public static function middleware(): array
-    {
-        return [
-            'auth',
-            new Middleware('log', only: ['index']),
-        ];
-    }
+    // public static function middleware(): array
+    // {
+    //     return [
+    //         'auth',
+    //         new Middleware('log', only: ['index']),
+    //     ];
+    // }
     
     public function index()
     {
 
         $posts = DB::table('posts')->latest()->paginate(6); //
-
         return view('posts.index')->with([
-            "posts" => $posts,
-           
-        ]);
+                "posts" => $posts,
+            
+            ]);
     }
 
     public function create()
